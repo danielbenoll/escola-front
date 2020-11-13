@@ -4,23 +4,42 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import Pagina from '../../components/Pagina';
 import apiAcademico from '../../services/apiAcademico';
-import alunoValidator from "../../validator/alunoValidator";
+import validator from "../../validator/alunoValidator";
+import Input from "../../components/forms/Input";
 
 export default() => {
     
     const {register, handleSubmit, errors} = useForm()
 
+    const reference = { register, validator, errors}
+
     function enviar(dados){
         console.log(dados)
-        apiAcademico.post('alunos', dados).then(results=>{
-            console.log(results.data)
-        })
+        // apiAcademico.post('alunos', dados).then(results=>{
+        //     console.log(results.data)
+        // })
     }
 
     return(
         <Pagina titulo ="Formulário de Aluno">
             <Form onSubmit={handleSubmit(enviar)}>
-                <Form.Group as={Row} controlId="nome">
+                <Input label="Nome:" name="nome" referencia={reference}/>
+                <Input label="Telefone:" name="telefone" referencia={reference}/>
+                <Input label="CPF:" name="cpf" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                <Input label="Matricula:" name="matricula" referencia={reference}/>
+                
+                {/* <Form.Group as={Row} controlId="nome">
                     <Form.Label column smo={3} className="text-right">Nome: <span className="text-danger">*</span></Form.Label>
                     <Col sm={9}>
                         <Form.Control type="text" name="nome" ref={register(alunoValidator.nome)} isInvalid={errors.nome} maxLength='50'/>
@@ -103,7 +122,7 @@ export default() => {
                         <Form.Control type="text" name="numero" ref={register(alunoValidator.numero)} isInvalid={errors.numero} maxLength='20'/>
                         <Form.Control.Feedback type='invalid'>{errors.numero?.message}</Form.Control.Feedback>
                     </Col>
-                </Form.Group>
+                </Form.Group> */}
                 <div className="text-center mb-3">
                     <Button type="submit" variant="success">Salvar</Button>
                     <Link to="/alunos" className="btn btn-danger ml-1">Voltar</Link>

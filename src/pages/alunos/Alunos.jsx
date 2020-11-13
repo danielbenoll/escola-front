@@ -27,14 +27,14 @@ export default() => {
                     </tr>
                 </thead>
                 <tbody>
-                    {alunos.map(item =>(
+                    {/* {alunos.map(item =>(
                         <tr key={item.id}>
                             <td></td>
                             <td>{item.nome}</td>
                             <td>{item.matricula}</td>
                             <td>{item.telefone}</td>
                         </tr>
-                    ))}
+                    ))} */}
                 </tbody>
                 </Table>
         </Pagina>
