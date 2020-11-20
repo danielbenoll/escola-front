@@ -19,6 +19,9 @@ export default (props) => {
                         <Link className="nav-link" to="/turmas">Turmas</Link>
                         <Link className="nav-link" to="/cursos">Cursos</Link>
                         <Link className="nav-link" to="/diciplinas">Diciplinas</Link>
+                        <Link className="nav-link" to="/salas">Salas</Link>
+                        <Link className="nav-link" to="/semestres">Semestres</Link>
+                        <Link className="nav-link" to="/disciplinas">Disciplinas</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
